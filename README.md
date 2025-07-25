@@ -69,7 +69,7 @@ Visit `http://localhost:3000` to view the project in your browser.
 
 ## 🔗 GitHub
 
-Repository: [https://github.com/your-username/react-practice](https://github.com/albertshin5172/React_Lecture_From_Inflearn)
+Repository: [(https://github.com/albertshin5172/React_Lecture_From_Inflearn)]
 
 ---
 

@@ -1,46 +1,35 @@
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
-const arr = [1, 2, 3];
-const text = "";
+const arr = ['1st', '2nd', '3rd', '4th'];
+
+const arr2 = [];
+for (let i = 0; i < arr.length; i++) {
+  arr2.push(<h4>{arr[i]}</h4>);
+  // = [<h4>1st</h4>, <h4>2nd</h4>, <h4>3rd</h4>, <h4>4th</h4>]
+}
 
 const element = (
   <div>
-    <h1>Ternary Operator</h1>
+    <h1>Put into array</h1>
     <ul>
-      <li>{1 + 1 === 2 ? "TRUE" : "FALSE"}</li>
+      <li>{arr}</li>
+      <li>{arr2}</li>
     </ul>
 
-    <h1>AND Operator</h1>
-    <ul>
-      <li>{1 + 1 === 2 && "AND Operator"}</li>
-      <li>{arr.length && "AND Operator"}</li>
-    </ul>
+    <hr />
 
-    <h1>OR Operator</h1>
-    <ul>
-      <li>{1 + 1 !== 2 || "OR Operator"}</li>
-      <li>{text || "OR Operator"}</li>
-    </ul>
-
-    <h1>IF Statement (IIFE : Immediately-invoked function expression)</h1>
+    <h1>Array.map</h1>
     <ul>
       <li>
-        {(() => {
-          if (1 + 1 === 2) return "IF";
-          else return "ELSE";
-        })()}
-      </li>
-      <li>
-        {(() => {
-          const data = "Immediately-invoked function expression";
-
-          /* Any Operator, add available */
-          /* Typically, an IIFE preprocesses the data before executing immediately */
-          return data;
-        })()}
+        {arr.map((item) => {
+          return <h4>{item}</h4>;
+        })}
       </li>
     </ul>
   </div>
 );
 
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);

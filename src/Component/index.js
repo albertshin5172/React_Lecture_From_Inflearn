@@ -1,3 +1,20 @@
+/* lower than React 18
+
+import ReactDOM from 'react-dom';
+
+function App() {
+  return <div>Hello, React!</div>;
+}
+
+// do it like this!
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+
+export default App;
+*/
+
 import ReactDOM from 'react-dom';
 
 function App() {

@@ -10,43 +10,60 @@
 
 ```
 react-practice/
-├── 01-jsx-basics/
-├── 02-components-props/
-├── 03-event-handling/
-├── 04-useState-hook/
-├── 05-conditional-rendering/
-├── ...
+├── src/
+│ ├── chapter01-intro/
+│ ├── chapter02-jsx/
+│ ├── chapter03-components/
+│ ├── chapter04-hooks/
+│ ├── chapter05-events/
+│ ├── chapter06-setup/
+│ └── ...
 ├── public/
-├── package.json
-└── README.md
+├── README.md
+└── package.json
 ```
 
 ---
 
-## ✅ Topics Covered
-
-| Folder                      | Topic                 | Description                                        |
-| --------------------------- | --------------------- | -------------------------------------------------- |
-| `01-jsx-basics/`            | JSX Basics            | Understanding JSX syntax and embedding expressions |
-| `02-components-props/`      | Components & Props    | Building functional components and passing props   |
-| `03-event-handling/`        | Event Handling        | Handling click and change events in React          |
-| `04-useState-hook/`         | State Management      | Managing component state with `useState`           |
-| `05-conditional-rendering/` | Conditional Rendering | Rendering elements based on state and conditions   |
-| `...`                       | ...                   | ...                                                |
 
 ---
 
-## 🔧 Getting Started
+## 📌 Chapters Covered
+
+| Chapter | Topic                                | Description                                  |
+|---------|--------------------------------------|----------------------------------------------|
+| 01      | Introduction to React                | SPA concept, virtual DOM, advantages         |
+| 02      | JSX                                   | JSX syntax, conditionals, loops, styling     |
+| 03      | Components                            | Props, state, function vs class components   |
+| 04      | Lifecycle & Hooks                     | useState, useEffect, rendering cycle         |
+| 05      | Event Handling                        | onClick, onChange, form handling             |
+| 06      | Environment Setup                     | Node.js, VSCode, CRA, ESLint, Prettier       |
+| 07~     | Hands-on Projects                     | Accordion, Survey Form, Memo App             |
+
+---
+
+## 🧑‍⚖️ License & Attribution
+
+This repository is **strictly for personal learning purposes**.
+
+- **All copyrights belong to** [Inflearn](https://www.inflearn.com/) and the original course author **Yoo Dong-kyun**.
+- This project is **not intended for any commercial use.**
+- Course link: [실무 중심! FE 입문자를 위한 React 강의 (Inflearn)](https://www.inflearn.com/course/프론트엔드-입문-react)
+
+---
+
+## 📦 Getting Started
 
 ```bash
+# Clone this repository
+git clone https://github.com/albertshin5172/React_Lecture_From_Inflearn.git
+cd react-practice
+
 # Install dependencies
 npm install
 
-# Start development server
+# Start local server
 npm start
-```
-
-Visit `http://localhost:3000` to view the project in your browser.
 
 ---
 

@@ -2,7 +2,7 @@ import './index.css';
 
 import ReactDOM from 'react-dom';
 
-// 2. style 재활용
+// 2. style recycling
 const roundBoxStyle = {
   position: 'absolute',
   top: 50,
@@ -11,7 +11,7 @@ const roundBoxStyle = {
   height: '200px',
   padding: 20,
   background: 'rgba(162,216,235,0.6)',
-  // 3. 속성은 camelCase
+  // 3. Attributes are in camelCase
   borderRadius: 50
 };
 

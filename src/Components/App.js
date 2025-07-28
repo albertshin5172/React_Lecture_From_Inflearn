@@ -1,12 +1,17 @@
-import Hello from './Hello';
-import World from './World';
+import CourseCard from './CourseCard';
 
-// Heading 이라는 컴포넌트를 만들고 Hello, World 컴포넌트를 통합하기
-export default function App() {
+function App() {
   return (
-    <div>
-      <Hello />
-      <World />
+    <div style={{ padding: 30 }}>
+      <CourseCard
+        img="https://dst6jalxvbuf5.cloudfront.net/media/images/Course/cover_image/210909_191531/23.png"
+        tags={['발표', '패키지', '최대할인']}
+        title="비즈니스 올인원, 방구석 어학연수 패키지"
+        startPrice={349000}
+        types={['동영상 강의']}
+      />
     </div>
   );
 }
+
+export default App;

@@ -15,8 +15,7 @@ ReactDOM.render(
 export default App;
 */
 
-import ReactDOM from 'react-dom';
-
+/*
 function App() {
   const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -44,3 +43,16 @@ root.render(<App />);
 
 
 export default App;
+*/
+
+
+export default function App() {
+  return (
+    <div>
+      <h1>Hello,</h1>
+      <h2>World</h2>
+      <h3>?????</h3>
+      <h4>!!!!!</h4>
+    </div>
+  );
+}

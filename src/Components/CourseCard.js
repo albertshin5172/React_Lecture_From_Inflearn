@@ -21,7 +21,7 @@ function CourseCard({
                 ))}
             </ul>
             <h4 className="name">{title}</h4>
-            <p className="price">{startPrice.toLocaleString()}원부터</p>
+            <p className="price">Prices start at ${startPrice.toLocaleString()}</p>
             <ul className="types">
                 {types.map((item, i) =>(
                     <li key={i} className='type'>

@@ -1,23 +1,15 @@
-import { useState } from 'react';
-import ClassComponent from './ClassComponent';
-import FunctionalComponent from './FunctionalComponent';
+import Accordion from './Accordion';
 
 function App() {
-  const [toggle, setToggle] = useState(true);
-
   return (
-    <>
-      {toggle && <ClassComponent />}
-      {toggle || <FunctionalComponent />}
-
-      <hr />
-
-      <button
-        onClick={() => setToggle((t) => !t)}
-      >
-        toggle
-      </button>
-    </>
+    <div
+      style={{ fontSize: '2rem', padding: 30 }}
+    >
+      <Accordion
+        title="This is a Title"
+        content="This is a content"
+      />
+    </div>
   );
 }
 

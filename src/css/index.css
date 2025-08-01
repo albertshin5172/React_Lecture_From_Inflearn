@@ -1,0 +1,21 @@
+button,
+input {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.App button,
+.App input {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.App .box {
+  width: 250px;
+  height: 100px;
+  background: #6666ffaa;
+  margin-bottom: 20px;
+}

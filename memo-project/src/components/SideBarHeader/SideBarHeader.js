@@ -1,3 +1,5 @@
+import './index.css';
+
 function SideBarHeader() {
   return <div className="SideBarHeader">SideBarHeader</div>;
 }

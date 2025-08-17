@@ -10,15 +10,9 @@
 
 ```
 react-practice/
-├── src/
-│ ├── chapter01-intro/
-│ ├── chapter02-jsx/
-│ ├── chapter03-components/
-│ ├── chapter04-hooks/
-│ ├── chapter05-events/
-│ ├── chapter06-setup/
-│ └── ...
-├── public/
+├── memo-project/
+├── section_1-6/
+├── survey-pie/
 ├── README.md
 └── package.json
 ```
@@ -33,12 +27,12 @@ react-practice/
 | Chapter | Topic                                | Description                                  |
 |---------|--------------------------------------|----------------------------------------------|
 | 01      | Introduction to React                | SPA concept, virtual DOM, advantages         |
-| 02      | JSX                                   | JSX syntax, conditionals, loops, styling     |
-| 03      | Components                            | Props, state, function vs class components   |
-| 04      | Lifecycle & Hooks                     | useState, useEffect, rendering cycle         |
-| 05      | Event Handling                        | onClick, onChange, form handling             |
-| 06      | Environment Setup                     | Node.js, VSCode, CRA, ESLint, Prettier       |
-| 07~     | Hands-on Projects                     | Accordion, Survey Form, Memo App             |
+| 02      | JSX                                  | JSX syntax, conditionals, loops, styling     |
+| 03      | Components                           | Props, state, function vs class components   |
+| 04      | Lifecycle & Hooks                    | useState, useEffect, rendering cycle         |
+| 05      | Event Handling                       | onClick, onChange, form handling             |
+| 06      | Environment Setup                    | Node.js, VSCode, CRA, ESLint, Prettier       |
+| 07~     | Hands-on Projects                    | Accordion, Survey Form, Memo App             |
 
 ---
 

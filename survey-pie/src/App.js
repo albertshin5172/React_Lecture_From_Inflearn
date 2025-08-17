@@ -1,23 +1,45 @@
-import './App.css';
-import logo from './logo.svg';
+import { useState } from 'react';
+import ProgressIndicator from './components/ProgressIndicator';
+import QuestionBox from './components/QuestionBox';
 
 function App() {
+  const questions = [
+    {
+      title: '질문1 입니다.',
+      desc: '설명1 입니다.',
+      type: 'text',
+      required: false,
+      options: {},
+    },
+    {
+      title: '질문1 입니다.',
+      desc: '설명1 입니다.',
+      type: 'text',
+      required: false,
+      options: {},
+    },
+  ];
+
+  const step = 1;
+
+  const [answers, setAnswers] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProgressIndicator />
+      <QuestionBox
+        question={questions[step]}
+        questionsLength={questions.length}
+        step={step}
+        answers={answers[step]}
+        setAnswer={(newAnswer) => {
+          setAnswers((answers) => {
+            const newAnswers = [...answers];
+            newAnswers[step] = newAnswer;
+            return newAnswers;
+          });
+        }}
+      />
     </div>
   );
 }

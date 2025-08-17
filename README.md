@@ -32,7 +32,9 @@ react-practice/
 | 04      | Lifecycle & Hooks                    | useState, useEffect, rendering cycle         |
 | 05      | Event Handling                       | onClick, onChange, form handling             |
 | 06      | Environment Setup                    | Node.js, VSCode, CRA, ESLint, Prettier       |
-| 07~     | Hands-on Projects                    | Accordion, Survey Form, Memo App             |
+| 07      | Hands-on Projects                    | Accordion,                                   |
+| 08      | Hands-on Projects                    | Memo App                                     |
+| 09~     | Hands-on Projects                    | Survey Form                                  |
 
 ---
 

@@ -1,47 +1,30 @@
-import { useState } from 'react';
-import ProgressIndicator from './components/ProgressIndicator';
-import QuestionBox from './components/QuestionBox';
+import { Route, Routes } from 'react-router-dom';
+import SurveyPage from './pages/SurveyPage';
+import CompletionPage from './pages/CompletionPage';
 
 function App() {
-  const questions = [
-    {
-      title: '질문1 입니다.',
-      desc: '설명1 입니다.',
-      type: 'text',
-      required: false,
-      options: {},
-    },
-    {
-      title: '질문1 입니다.',
-      desc: '설명1 입니다.',
-      type: 'text',
-      required: false,
-      options: {},
-    },
-  ];
-
-  const step = 1;
-
-  const [answers, setAnswers] = useState([]);
-
   return (
     <div className="App">
-      <ProgressIndicator />
-      <QuestionBox
-        question={questions[step]}
-        questionsLength={questions.length}
-        step={step}
-        answers={answers[step]}
-        setAnswer={(newAnswer) => {
-          setAnswers((answers) => {
-            const newAnswers = [...answers];
-            newAnswers[step] = newAnswer;
-            return newAnswers;
-          });
-        }}
-      />
+      {/*
+        In React Router, the <Route> component's element property should be passed as JSX, not as a component function.
+        element={PageA} passes the function itself,
+        element={<PageA />} passes the component instance, which is the result of the function call.
+        Because React Router expects JSX in the element property, passing the function itself will result in an error.
+      */}
+      <Routes>
+        <Route path="/done" element={<CompletionPage />} />
+        <Route path="/survey/:surveyId/" element={<SurveyPage />}>
+          <Route path=":step" element={<SurveyPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
 
+/* 
+  "/survey" What else is needed: Survey ID
+
+  http://www.surveypie.com/survey?id=abc123
+  http://www.surveypie.com/survey/abc123
+*/
 export default App;

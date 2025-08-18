@@ -4,4 +4,4 @@ function Title({ children }) {
 
 export default Title;
 
-//<Title>타이틀입니다.</Title>
+//<Title>This is the title.</Title>

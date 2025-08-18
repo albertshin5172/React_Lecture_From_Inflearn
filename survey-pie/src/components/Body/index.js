@@ -10,7 +10,7 @@ function Body({ type, answer, setAnswer }) {
   } else if (type === 'textarea') {
   }
 
-  //if (!InputComponent) return null; // 컴포넌트가 없으면 아무 것도 렌더링하지 않음
+  //if (!InputComponent) return null; // no componet, no rendering
 
   return (
     <>

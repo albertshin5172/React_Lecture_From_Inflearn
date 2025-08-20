@@ -14,7 +14,6 @@ react-practice/
 ├── section_1-6/
 ├── survey-pie/
 ├── README.md
-└── package.json
 ```
 
 ---

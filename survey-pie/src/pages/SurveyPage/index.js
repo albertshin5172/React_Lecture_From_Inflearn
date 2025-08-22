@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionBox from '../../components/QuestionBox';
+import styled from 'styled-components';
 
 function SurveyPage() {
   const params = useParams();
@@ -20,7 +21,7 @@ function SurveyPage() {
     },
     {
       title: 'This is Question 2.',
-      desc: 'This is description 2',
+      desc: 'This is description 2.',
       type: 'textarea',
       required: true,
       options: {
@@ -29,7 +30,7 @@ function SurveyPage() {
     },
     {
       title: 'This is Question 3.',
-      desc: 'This is description 3',
+      desc: 'This is description 3.',
       type: 'select',
       required: true,
       options: {
@@ -43,7 +44,7 @@ function SurveyPage() {
   const [answers, setAnswers] = useState([]);
   console.log(answers);
   return (
-    <div>
+    <SurveyPageWrapper>
       <ProgressIndicator />
       <QuestionBox
         question={questions[step]}
@@ -58,7 +59,7 @@ function SurveyPage() {
           });
         }}
       />
-    </div>
+    </SurveyPageWrapper>
     // <>
     //   <div>SurveyPage</div>
     //   <div>
@@ -71,5 +72,8 @@ function SurveyPage() {
     // </>
   );
 }
-
+const SurveyPageWrapper = styled.div`
+  width: 100%;
+  min-height: 100%;
+`;
 export default SurveyPage;

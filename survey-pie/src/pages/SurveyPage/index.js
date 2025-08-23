@@ -1,14 +1,17 @@
-import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import { useState } from 'react';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionBox from '../../components/QuestionBox';
 import styled from 'styled-components';
+//import { useRecoilValue } from 'recoil';
+//import questionsState from '../../Store/questions/atom';
 
 function SurveyPage() {
-  const params = useParams();
+  //const params = useParams();
 
   //console.log('params', params);
-
+  //const questions = useRecoilValue(questionsState);
+  /*
   const questions = [
     {
       title: 'This is Question 1.',
@@ -38,15 +41,17 @@ function SurveyPage() {
       },
     },
   ];
+  */
+  //const step = parseInt(params.step);
 
-  const step = parseInt(params.step);
+  //const [answers, setAnswers] = useState([]);
+  //console.log(answers);
 
-  const [answers, setAnswers] = useState([]);
-  console.log(answers);
   return (
     <SurveyPageWrapper>
       <ProgressIndicator />
-      <QuestionBox
+      <QuestionBox />
+      {/* <QuestionBox
         question={questions[step]}
         questionsLength={questions.length}
         step={step}
@@ -58,7 +63,7 @@ function SurveyPage() {
             return newAnswers;
           });
         }}
-      />
+      /> */}
     </SurveyPageWrapper>
     // <>
     //   <div>SurveyPage</div>

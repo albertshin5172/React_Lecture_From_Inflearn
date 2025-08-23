@@ -51,9 +51,6 @@ const SelectInputWrapper = styled.div`
 const ItemWrapper = styled.div`
   input[type='checkbox'] {
     display: none;
-    // div {
-    //   background-color: aqua;
-    // }
   }
 
   input[type='checkbox'] ~ span {

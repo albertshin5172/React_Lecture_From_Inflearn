@@ -1,34 +1,40 @@
-import { useParams } from 'react-router-dom';
-import { useRecoilState, useRecoilValue } from 'recoil';
+//import { useParams } from 'react-router-dom';
+//import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
-import answersState from '../../Store/answers/atom';
-import questionsState from '../../Store/questions/atom';
+//import answersState from '../../Store/answers/atom';
+//import questionsState from '../../Store/questions/atom';
 import ActionButtons from '../ActionButtons';
 import Body from '../Body';
 import Desc from '../Desc';
 import Title from '../Title';
+import useCurrentQuestion from '../../hooks/useCurrentQuestion';
+import useCurrentAnswer from '../../hooks/useCurrentAnswer';
 
 //function QuestionBox({ question, questionsLength, step, answer, setAnswer }) {
 function QuestionBox() {
-  const params = useParams();
+  const [answer, setAnswer] = useCurrentAnswer();
 
-  const step = parseInt(params.step);
-  const questions = useRecoilValue(questionsState);
-  const [answers, setAnswers] = useRecoilState(answersState);
+  const question = useCurrentQuestion();
+  //const params = useParams();
 
-  const question = questions[step];
+  //const step = parseInt(params.step);
+  //const questions = useRecoilValue(questionsState);
+  //const [answers, setAnswers] = useRecoilState(answersState);
+
+  //const question = questions[step];
   //const questionsLength = questions.length;
-  const answer = answers[step];
+  //const answer = answers[step];
 
-  const setAnswer = (newAnswer) => {
-    setAnswers((answers) => {
-      const newAnswers = [...answers];
-      newAnswers[step] = newAnswer;
+  //const setAnswer = (newAnswer) => {
+  //  setAnswers((answers) => {
+  //    const newAnswers = [...answers];
+  //    newAnswers[step] = newAnswer;
 
-      return newAnswers;
-    });
-  };
+  //    return newAnswers;
+  //  });
+  //};
+
   return (
     <QuestionBoxWrapper>
       <Title>{question.title}</Title>

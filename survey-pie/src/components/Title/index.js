@@ -21,5 +21,3 @@ const TitleWrapper = styled.h1`
   }
 `;
 export default Title;
-
-//<Title>This is the title.</Title>

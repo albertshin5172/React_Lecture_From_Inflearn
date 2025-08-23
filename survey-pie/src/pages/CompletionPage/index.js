@@ -2,11 +2,18 @@
 import styled from 'styled-components';
 //import './index.css';
 
+import { useRecoilValue } from 'recoil';
+//import testState from '../../Store/test/atom';
+import testWithComma from '../../Store/test/testWithComma';
+
 const a = 123;
 
 function CompletionPage() {
+  const test = useRecoilValue(testWithComma);
+  //const test = useRecoilValue(testState);
   //return <div className="CompletionPage">CompletionPage</div>;
-  return <CompletionPageWrapper>CompletionPage</CompletionPageWrapper>;
+  //return <CompletionPageWrapper>CompletionPage</CompletionPageWrapper>;
+  return <CompletionPageWrapper>{test}</CompletionPageWrapper>;
   // return (
   //   <>
   //     <div>CompletionPage</div>

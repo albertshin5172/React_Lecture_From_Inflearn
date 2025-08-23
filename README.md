@@ -33,7 +33,7 @@ react-practice/
 | 06      | Environment Setup                    | Node.js, VSCode, CRA, ESLint, Prettier       |
 | 07      | Hands-on Projects                    | Accordion,                                   |
 | 08      | Hands-on Projects                    | Memo App                                     |
-| 09~     | Hands-on Projects                    | Survey Form                                  |
+| 09~     | Hands-on Projects                    | Survey Form(react-router, styled, recoil)    |
 
 ---
 

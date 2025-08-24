@@ -1,4 +1,5 @@
 //import { Link } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 //import './index.css';
 
@@ -10,6 +11,10 @@ const a = 123;
 
 function CompletionPage() {
   const test = useRecoilValue(testWithComma);
+  axios.get('http://localhost:3001/surveys').then((res) => {
+    console.log('res', res.data);
+  });
+
   //const test = useRecoilValue(testState);
   //return <div className="CompletionPage">CompletionPage</div>;
   //return <CompletionPageWrapper>CompletionPage</CompletionPageWrapper>;

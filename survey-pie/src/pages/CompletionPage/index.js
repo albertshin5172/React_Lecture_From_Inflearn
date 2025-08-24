@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { useRecoilValue } from 'recoil';
 //import testState from '../../Store/test/atom';
-import testWithComma from '../../Store/test/testWithComma';
+import testWithComma from '../../stores/test/testWithComma';
 
 const a = 123;
 

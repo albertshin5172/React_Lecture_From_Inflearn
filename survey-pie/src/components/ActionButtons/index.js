@@ -5,7 +5,7 @@ import Button from '../Button';
 import styled from 'styled-components';
 //import questionsState from '../../Store/questions/atom';
 import useStep from '../../hooks/useStep';
-import questionsLengthState from '../../Store/questions/questionsLengthState';
+import questionsLengthState from '../../stores/survey/questionsLengthState';
 
 function ActionButtons() {
   //const params = useParams();

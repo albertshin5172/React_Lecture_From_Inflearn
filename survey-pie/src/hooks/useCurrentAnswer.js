@@ -1,7 +1,7 @@
 //import { useParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import answerState from '../Store/answers/atom';
+import answerState from '../stores/answers/atom';
 import useStep from './useStep';
 
 function useCurrentAnswer() {

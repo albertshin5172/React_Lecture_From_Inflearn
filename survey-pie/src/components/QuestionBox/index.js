@@ -14,8 +14,11 @@ import useCurrentAnswer from '../../hooks/useCurrentAnswer';
 //function QuestionBox({ question, questionsLength, step, answer, setAnswer }) {
 function QuestionBox() {
   const [answer, setAnswer] = useCurrentAnswer();
+  const question = useCurrentQuestion(); //undefined
 
-  const question = useCurrentQuestion();
+  if (!question) {
+    return null;
+  }
   //const params = useParams();
 
   //const step = parseInt(params.step);

@@ -1,5 +1,6 @@
 // import { useParams } from 'react-router-dom';
-// import { useState } from 'react';
+import React from 'react';
+//import { Suspense } from 'react';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionBox from '../../components/QuestionBox';
 import styled from 'styled-components';
@@ -48,10 +49,11 @@ function SurveyPage() {
   //console.log(answers);
 
   return (
-    <SurveyPageWrapper>
-      <ProgressIndicator />
-      <QuestionBox />
-      {/* <QuestionBox
+    <React.Suspense fallback={<div>loading..</div>}>
+      <SurveyPageWrapper>
+        <ProgressIndicator />
+        <QuestionBox />
+        {/* <QuestionBox
         question={questions[step]}
         questionsLength={questions.length}
         step={step}
@@ -64,7 +66,8 @@ function SurveyPage() {
           });
         }}
       /> */}
-    </SurveyPageWrapper>
+      </SurveyPageWrapper>
+    </React.Suspense>
     // <>
     //   <div>SurveyPage</div>
     //   <div>

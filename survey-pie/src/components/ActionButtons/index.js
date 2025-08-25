@@ -6,12 +6,17 @@ import styled from 'styled-components';
 //import questionsState from '../../Store/questions/atom';
 import useStep from '../../hooks/useStep';
 import questionsLengthState from '../../stores/survey/questionsLengthState';
+import postAnswers from '../../services/postAnswers';
+import useSurveyId from '../../hooks/useSurveyId';
+import useAnswers from '../../hooks/useAnswers';
 
 function ActionButtons() {
   //const params = useParams();
   //const step = parseInt(params.step);
   //const questionsLength = questions.length;
   const step = useStep();
+  const surveyId = useSurveyId();
+  const answers = useAnswers();
   //const questions = useRecoilValue(questionsState);
   const questionsLength = useRecoilValue(questionsLengthState);
 
@@ -34,7 +39,8 @@ function ActionButtons() {
         <Button
           type="PRIMARY"
           onClick={() => {
-            navigate('done');
+            postAnswers(surveyId, answers);
+            navigate('/done');
           }}
         >
           제출

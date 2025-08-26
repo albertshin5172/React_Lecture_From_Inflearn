@@ -9,6 +9,7 @@ import questionsLengthState from '../../stores/survey/questionsLengthState';
 import postAnswers from '../../services/postAnswers';
 import useSurveyId from '../../hooks/useSurveyId';
 import useAnswers from '../../hooks/useAnswers';
+import { useState } from 'react';
 
 function ActionButtons() {
   //const params = useParams();
@@ -17,6 +18,7 @@ function ActionButtons() {
   const step = useStep();
   const surveyId = useSurveyId();
   const answers = useAnswers();
+  const [isPosting, setIsPosting] = useState(false);
   //const questions = useRecoilValue(questionsState);
   const questionsLength = useRecoilValue(questionsLengthState);
 
@@ -39,11 +41,20 @@ function ActionButtons() {
         <Button
           type="PRIMARY"
           onClick={() => {
-            postAnswers(surveyId, answers);
-            navigate('/done');
+            setIsPosting(true);
+            postAnswers(surveyId, answers)
+              .then(() => {
+                navigate(`/done/${surveyId}`);
+              })
+              .catch((err) => {
+                //console.log(err.response);
+                alert('에러가 발생했습니다. 다시 시도해주세요.');
+                setIsPosting(false);
+              });
           }}
+          disabled={isPosting}
         >
-          제출
+          {isPosting ? '제출 중입니다...' : '제출'}
         </Button>
       ) : (
         <Button

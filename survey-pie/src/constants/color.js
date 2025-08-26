@@ -40,12 +40,12 @@ export const SECONDARY = {
   },
 };
 
-export const TERITIARY = {
+export const TERTIARY = {
   BUTTON: {
     DEFAULT: {
       COLOR: '#6542F1',
       BACKGROUND: '#FFFFFF',
-      BORDER: '6542F1',
+      BORDER: '#6542F1',
     },
     HOVER: {
       COLOR: '#9982F4',

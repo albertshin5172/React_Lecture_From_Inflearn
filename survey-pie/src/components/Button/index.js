@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { PRIMARY, SECONDARY, TERITIARY } from '../../constants/color';
+import { PRIMARY, SECONDARY, TERTIARY } from '../../constants/color';
 
 const colorMap = {
   PRIMARY, //=== PRIMARY: PRIMARY
   SECONDARY,
-  TERITIARY,
+  TERTIARY,
 };
 /*
 function getColor(type1, type2) {
@@ -27,16 +27,16 @@ const Button = styled.button`
   font-weight: bold;
 
   border: ${({ type }) =>
-    type === 'TERITIARY'
-      ? `1px solid ${TERITIARY.BUTTON.DEFAULT.BACKGROUND}`
+    type === 'TERTIARY'
+      ? `1px solid ${TERTIARY.BUTTON.DEFAULT.BORDER},`
       : 'none'};
 
   &:hover {
     color: ${({ type }) => colorMap[type].BUTTON.HOVER.COLOR};
     background: ${({ type }) => colorMap[type].BUTTON.HOVER.BACKGROUND};
     border: ${({ type }) =>
-      type === 'TERITIARY'
-        ? `1px solid ${TERITIARY.BUTTON.HOVER.BACKGROUND}`
+      type === 'TERTIARY'
+        ? `1px solid ${TERTIARY.BUTTON.HOVER.BACKGROUND}`
         : 'none'};
   }
 
@@ -44,8 +44,8 @@ const Button = styled.button`
     color: ${({ type }) => colorMap[type].BUTTON.PRESSED.COLOR};
     background: ${({ type }) => colorMap[type].BUTTON.PRESSED.BACKGROUND};
     border: ${({ type }) =>
-      type === 'TERITIARY'
-        ? `1px solid ${TERITIARY.BUTTON.PRESSED.BACKGROUND}`
+      type === 'TERTIARY'
+        ? `1px solid ${TERTIARY.BUTTON.PRESSED.BACKGROUND}`
         : 'none'};
   }
 
@@ -53,8 +53,8 @@ const Button = styled.button`
     color: ${({ type }) => colorMap[type].BUTTON.DISABLED.COLOR};
     background: ${({ type }) => colorMap[type].BUTTON.DISABLED.BACKGROUND};
     border: ${({ type }) =>
-      type === 'TERITIARY'
-        ? `1px solid ${TERITIARY.BUTTON.DISABLED.BACKGROUND}`
+      type === 'TERTIARY'
+        ? `1px solid ${TERTIARY.BUTTON.DISABLED.BACKGROUND}`
         : 'none'};
   }
 `;

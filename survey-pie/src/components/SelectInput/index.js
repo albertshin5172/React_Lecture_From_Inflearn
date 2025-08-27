@@ -2,11 +2,11 @@
 
 import styled from 'styled-components';
 
-function Item({ children, onChange }) {
+function Item({ children, checked, onChange }) {
   return (
     <ItemWrapper>
       <label>
-        <input type="checkbox" onChange={onChange} />
+        <input type="checkbox" checked={checked} onChange={onChange} />
         <span />
         <div>{children}</div>
       </label>
@@ -17,6 +17,13 @@ function Item({ children, onChange }) {
 function SelectInput({ answer = [], setAnswer, options }) {
   const handleChange = (isChecked, index) => {
     if (isChecked) {
+      if (options) {
+        const max = options?.max ?? 1;
+
+        if (answer.length >= max) {
+          return;
+        }
+      }
       //setAnswer(add index)
       setAnswer([...answer, index]);
     } else {
@@ -24,12 +31,14 @@ function SelectInput({ answer = [], setAnswer, options }) {
       setAnswer(answer.filter((item) => item !== index));
     }
   };
+
   return (
     <SelectInputWrapper>
       {options.items.map((item, index) => {
         return (
           <Item
             key={index}
+            checked={answer.includes(index)}
             onChange={(e) => {
               handleChange(e.target.checked, index);
             }}

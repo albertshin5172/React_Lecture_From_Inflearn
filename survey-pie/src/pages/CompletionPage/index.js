@@ -25,6 +25,7 @@ function CompletionPage() {
   const navigate = useNavigate();
 
   return (
+    // <Box>
     <CompletionPageWrapper>
       <img src={congrats} alt="" width="209" height="204"></img>
       <MidText>설문을 완료했습니다.</MidText>
@@ -38,6 +39,7 @@ function CompletionPage() {
         새로운 응답 제출하기
       </ReloadButton>
     </CompletionPageWrapper>
+    // </Box>
   );
   // return (
   //   <>

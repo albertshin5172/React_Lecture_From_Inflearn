@@ -1,6 +1,6 @@
 import { selector } from 'recoil';
 //import mainApi from '../../services/apis/mainApi';
-import getSurvey from '../../services/apis/getSurvey';
+import getSurvey from '../../services/getSurvey';
 
 const surveyState = selector({
   key: 'surveyState',

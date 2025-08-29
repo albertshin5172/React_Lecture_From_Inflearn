@@ -49,6 +49,7 @@ function SurveyPage() {
   //console.log(answers);
 
   return (
+    // <FullLayOut>
     <React.Suspense fallback={<div>loading..</div>}>
       <SurveyPageWrapper>
         <ProgressIndicator />
@@ -68,6 +69,7 @@ function SurveyPage() {
       /> */}
       </SurveyPageWrapper>
     </React.Suspense>
+    // </FullLayOut>
     // <>
     //   <div>SurveyPage</div>
     //   <div>

@@ -3,6 +3,7 @@ import OptionSection from "../components/OptionSection";
 import PreviewSection from "../components/PreviewSeciton";
 import MainLayout from "../layouts/MainLayout";
 import { Col, Input, Row } from "antd";
+import { produce } from "immer";
 
 function BuilderPage() {
   const [data, setData] = useState({
@@ -51,10 +52,89 @@ function BuilderPage() {
             placeholder="Please enter a survey title."
             value={data.title}
             onChange={(e) => {
-              setData((state) => ({ ...state, title: e.target.value }));
+              //const newData = produce(data, (draft) => {
+              //  draft.title = e.target.value;
+              //});
+
+              //setData((state) => ({ ...state, title: e.target.value }));
+              //setData(newData);
+
+              setData(
+                produce(data, (draft) => {
+                  draft.title = e.target.value;
+                })
+              );
             }}
           />
-          <PreviewSection questions={data.questions} />
+          <PreviewSection
+            questions={data.questions}
+            addQuestion={() => {
+              // setData((state) => ({
+              //   ...state,
+              //   questions: [
+              //     ...state.questions,
+              //     {
+              //       title: "Untitled",
+              //       desc: "",
+              //       type: "text",
+              //       required: false,
+              //       options: {
+              //         max: 20,
+              //         placeholder: "",
+              //       },
+              //     },
+              //   ],
+              // }));
+
+              setData(
+                produce((draft) => {
+                  draft.questions.push({
+                    title: "Untitled",
+                    desc: "",
+                    type: "text",
+                    required: false,
+                    options: {
+                      max: 20,
+                      placeholder: "",
+                    },
+                  });
+                })
+              );
+            }}
+            moveUpQuestion={(index) => {
+              if (index === 0) {
+                return;
+              }
+
+              setData(
+                produce((draft) => {
+                  const tmep = draft.questions[index];
+                  draft.questions[index] = draft.questions[index - 1];
+                  draft.questions[index - 1] = tmep;
+                })
+              );
+            }}
+            moveDownQuestion={(index) => {
+              if (index === data.questions.length - 1) {
+                return;
+              }
+
+              setData(
+                produce((draft) => {
+                  const tmep = draft.questions[index];
+                  draft.questions[index] = draft.questions[index + 1];
+                  draft.questions[index + 1] = tmep;
+                })
+              );
+            }}
+            deleteQuestion={(index) =>
+              setData(
+                produce((draft) => {
+                  draft.questions.splice(index, 1);
+                })
+              )
+            }
+          />
         </Col>
         <Col flex="350px">
           <OptionSection />

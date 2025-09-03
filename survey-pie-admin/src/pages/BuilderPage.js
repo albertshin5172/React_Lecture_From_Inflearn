@@ -1,12 +1,23 @@
 import { useState } from "react";
 import OptionSection from "../components/OptionSection";
-import PreviewSection from "../components/PreviewSeciton";
+import PreviewSection from "../components/PreviewSection";
 import MainLayout from "../layouts/MainLayout";
 import { Col, Input, Row } from "antd";
-import { produce } from "immer";
+//import { produce } from "immer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setTitle,
+  addQuestion,
+  moveUpQuestion,
+  moveDownQuestion,
+  deleteQuestion,
+} from "../stores/survey/surveySlice";
 
 function BuilderPage() {
-  const [data, setData] = useState({
+  const survey = useSelector((state) => state.survey);
+
+  const [data] = useState({
+    //const [data, setData] = useState({
     id: 1,
     title: "명절 선물 선호도 조사",
     questions: [
@@ -44,31 +55,34 @@ function BuilderPage() {
     createdAt: 1647160914620,
   });
 
+  const dispatch = useDispatch();
+
   return (
     <MainLayout selectedKeys={["builder"]}>
       <Row>
         <Col flex="auto">
           <Input
             placeholder="Please enter a survey title."
-            value={data.title}
+            value={survey.title}
             onChange={(e) => {
+              dispatch(setTitle(e.target.value));
               //const newData = produce(data, (draft) => {
               //  draft.title = e.target.value;
               //});
 
               //setData((state) => ({ ...state, title: e.target.value }));
               //setData(newData);
-
-              setData(
-                produce(data, (draft) => {
-                  draft.title = e.target.value;
-                })
-              );
+              // setData(
+              // produce(data, (draft) => {
+              // draft.title = e.target.value;
+              // })
+              // );
             }}
           />
           <PreviewSection
-            questions={data.questions}
-            addQuestion={() => {
+            questions={survey.questions}
+            addQuestion={(type) => {
+              dispatch(addQuestion(type));
               // setData((state) => ({
               //   ...state,
               //   questions: [
@@ -86,54 +100,55 @@ function BuilderPage() {
               //   ],
               // }));
 
-              setData(
-                produce((draft) => {
-                  draft.questions.push({
-                    title: "Untitled",
-                    desc: "",
-                    type: "text",
-                    required: false,
-                    options: {
-                      max: 20,
-                      placeholder: "",
-                    },
-                  });
-                })
-              );
+              // setData(
+              //   produce(data, (draft) => {
+              //     draft.questions.push({
+              //       title: "Untitled",
+              //       desc: "",
+              //       type: "text",
+              //       required: false,
+              //       options: {
+              //         max: 20,
+              //         placeholder: "",
+              //       },
+              //     });
+              //   })
+              // );
             }}
             moveUpQuestion={(index) => {
               if (index === 0) {
                 return;
               }
-
-              setData(
-                produce((draft) => {
-                  const tmep = draft.questions[index];
-                  draft.questions[index] = draft.questions[index - 1];
-                  draft.questions[index - 1] = tmep;
-                })
-              );
+              dispatch(moveUpQuestion(index));
+              // setData(
+              //   produce((draft) => {
+              //     const tmep = draft.questions[index];
+              //     draft.questions[index] = draft.questions[index - 1];
+              //     draft.questions[index - 1] = tmep;
+              //   })
+              // );
             }}
             moveDownQuestion={(index) => {
-              if (index === data.questions.length - 1) {
+              if (index === survey.questions.length - 1) {
                 return;
               }
-
-              setData(
-                produce((draft) => {
-                  const tmep = draft.questions[index];
-                  draft.questions[index] = draft.questions[index + 1];
-                  draft.questions[index + 1] = tmep;
-                })
-              );
+              dispatch(moveDownQuestion(index));
+              // setData(
+              //   produce((draft) => {
+              //     const tmep = draft.questions[index];
+              //     draft.questions[index] = draft.questions[index + 1];
+              //     draft.questions[index + 1] = tmep;
+              //   })
+              // );
             }}
-            deleteQuestion={(index) =>
-              setData(
-                produce((draft) => {
-                  draft.questions.splice(index, 1);
-                })
-              )
-            }
+            deleteQuestion={(index) => {
+              dispatch(deleteQuestion(index));
+              // setData(
+              //   produce((draft) => {
+              //     draft.questions.splice(index, 1);
+              //   })
+              // )
+            }}
           />
         </Col>
         <Col flex="350px">

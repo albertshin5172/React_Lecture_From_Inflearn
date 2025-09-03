@@ -1,5 +1,4 @@
 import axios from "axios";
-//const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 axios.defaults.baseURL = "http://localhost:3001";
 

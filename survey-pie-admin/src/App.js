@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+//import "./App.css";
 import ListPage from "./pages/ListPage";
 import BuilderPage from "./pages/BuilderPage";
 
@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<ListPage />} />
+        <Route path="/builder/:surveyId" element={<BuilderPage />} />
         <Route path="/list" element={<ListPage />} />
         <Route path="/builder/:surveyId" element={<BuilderPage />} />
       </Routes>

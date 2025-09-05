@@ -9,14 +9,16 @@ function Card({
   onUpButtonClick,
   onDownButtonClick,
   onDeleteButtonClick,
+  onClick,
+  isSelected,
 }) {
   return (
-    <CardWrapper>
-      <Head>
+    <CardWrapper $isSelected={isSelected}>
+      <Head onClick={onClick}>
         <Title>{title}</Title>
         <Desc>{desc}</Desc>
       </Head>
-      <Body>{children}</Body>
+      <Body onClick={onClick}>{children}</Body>
 
       <ButtonGroupWrapper>
         <ButtonGroup>
@@ -43,16 +45,16 @@ const ButtonGroupWrapper = styled.div`
   top: 0;
   display: none;
 `;
-
 const ButtonGroup = styled.div`
+  background: #ffffff;
   margin-left: 10px;
   background: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 5px;
 `;
-
 const CardWrapper = styled.div`
-  border: 1px solid #dddddd;
+  border: ${({ $isSelected }) =>
+    $isSelected ? "3px solid blue" : "1px solid #dddddd"};
   width: 400px;
   margin: 30px auto;
   background: #ffffff;
@@ -62,22 +64,17 @@ const CardWrapper = styled.div`
     display: block;
   }
 `;
-
 const Head = styled.div`
   border-bottom: 1px solid #dddddd;
   padding: 15px;
 `;
-
 const Title = styled.div`
-  font-size: 1.2rem;
   font-weight: 600;
 `;
-
 const Desc = styled.div`
   color: #666666;
   margin-left: 5px;
 `;
-
 const Body = styled.div`
   padding: 15px;
 `;

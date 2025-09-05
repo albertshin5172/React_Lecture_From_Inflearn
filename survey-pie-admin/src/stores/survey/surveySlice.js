@@ -98,6 +98,10 @@ const surveySlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    setQuestion: (state, action) => {
+      const index = action.payload.index;
+      state.data.questions[index] = action.payload.data;
+    },
   },
 });
 

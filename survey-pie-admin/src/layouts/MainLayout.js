@@ -17,10 +17,10 @@ const { Header, Content, Sider } = Layout;
 
 //const contentStyle = { padding: 45 };
 
-function MainLayout({ selectedKeys, children }) {
+function MainLayout({ selectedKeys, children, padding = 45 }) {
   const contentStyle = useMemo(() => {
     return { padding: 45 };
-  }, []);
+  }, [padding]);
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -33,7 +33,7 @@ function MainLayout({ selectedKeys, children }) {
             background: "rgba(255, 255,255, 0.3)",
           }}
         />
-        <Menu theme="dark" selectedKeys={selectedKeys} mode="inline" items="">
+        <Menu theme="dark" selectedKeys={selectedKeys} mode="inline">
           <Menu.Item key="list">
             <Link to="/list">Survey Management</Link>
           </Menu.Item>

@@ -77,10 +77,10 @@ function BuilderPage() {
   }
 
   return (
-    <MainLayout selectedKeys={["builder"]}>
-      <Row>
-        <BuilderTitleInput />
-        <Col flex="auto">
+    <MainLayout selectedKeys={["builder"]} padding={0}>
+      <Row style={{ height: "100%" }}>
+        <Col flex="auto" style={{ padding: 30 }}>
+          <BuilderTitleInput />
           <PreviewSection
           // addQuestion={(type) => {
           //   dispatch(addQuestion(type));

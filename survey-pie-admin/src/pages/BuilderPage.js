@@ -19,6 +19,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import fetchSurvey from "../services/fetchSurvey";
 import BuilderTitleInput from "../components/BuilderTitleInput";
+import FloatingButton from "../components/FloatingButton";
 
 function BuilderPage() {
   // const [data] = useState({
@@ -156,6 +157,7 @@ function BuilderPage() {
           <OptionSection />
         </Col>
       </Row>
+      <FloatingButton />
     </MainLayout>
   );
 }

@@ -20,6 +20,8 @@ import { useEffect } from "react";
 import fetchSurvey from "../services/fetchSurvey";
 import BuilderTitleInput from "../components/BuilderTitleInput";
 import FloatingButton from "../components/FloatingButton";
+import { setSelectedQuestionId } from "../stores/selectedQuestionId/selectedQuestionIdSlice";
+import { setSurvey } from "../stores/survey/surveySlice";
 
 function BuilderPage() {
   // const [data] = useState({
@@ -67,7 +69,17 @@ function BuilderPage() {
   const params = useParams();
 
   useEffect(() => {
-    dispatch(fetchSurvey(params.surveyId));
+    if (params.surveyId) {
+      dispatch(fetchSurvey(params.surveyId));
+    } else {
+      dispatch(
+        setSurvey({
+          title: "",
+          questions: [],
+        })
+      );
+      dispatch(setSelectedQuestionId(null));
+    }
   }, [dispatch, params.surveyId]);
 
   if (error) {

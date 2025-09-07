@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 function postSurvey(survey) {
   return axios
     .post(`/surveys`, { ...survey, createdAt: new Date().getTime() })
     .then((res) => {
-      alert('저장되었습니다.');
+      alert("Survey has been saved.");
 
       return res.data;
     });

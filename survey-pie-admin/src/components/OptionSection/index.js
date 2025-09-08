@@ -123,7 +123,7 @@ function OptionSection() {
     ? [
         ...groups,
         {
-          title: "세부 옵션",
+          title: "Detailed options",
           fields: detailFieldsMap[question.type],
         },
       ]
@@ -132,7 +132,7 @@ function OptionSection() {
   return (
     <OptionSectionWrapper>
       <FormWrapper>
-        <Title>문항 옵션</Title>
+        <Title>Question options</Title>
         {question ? (
           <Form form={form} layout={"vertical"} name="option-form">
             {mergedGroups.map((group, index) => (

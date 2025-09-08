@@ -27,7 +27,7 @@ function AddButton({ addQuestion }) {
               }}
               style={{ display: "block" }}
             >
-              객관식
+              Multiple Choice
             </Button>
             <Button
               type="text"
@@ -37,7 +37,7 @@ function AddButton({ addQuestion }) {
               }}
               style={{ display: "block" }}
             >
-              단답식
+              Short Answer
             </Button>
             <Button
               type="text"
@@ -47,7 +47,7 @@ function AddButton({ addQuestion }) {
               }}
               style={{ display: "block" }}
             >
-              서술식
+              Descriptive Expression
             </Button>
           </div>
         }

@@ -59,17 +59,17 @@ function ListPage() {
   const columns = useMemo(
     () => [
       {
-        title: "번호",
+        title: "Num",
         dataIndex: "id",
         key: "id",
       },
       {
-        title: "제목",
+        title: "Title",
         dataIndex: "title",
         key: "title",
       },
       {
-        title: "생성일",
+        title: "Creation Date",
         dataIndex: "createdAt",
         key: "createdAt",
         render: (createdAt) => {
@@ -81,7 +81,7 @@ function ListPage() {
         },
       },
       {
-        title: "액션",
+        title: "Action",
         dataIndex: "id",
         key: "action",
         render: (id) => {
@@ -95,7 +95,7 @@ function ListPage() {
                 e.preventDefault();
               }}
             >
-              삭제
+              Delete
             </Button>
           );
         },
@@ -118,7 +118,7 @@ function ListPage() {
     <MainLayout selectedKeys={["list"]}>
       <CreateButtonWrapper>
         <Button onClick={() => navigate("/builder")}>
-          새로운 설문조사 생성
+          Create a new survey
         </Button>
       </CreateButtonWrapper>
       <Table

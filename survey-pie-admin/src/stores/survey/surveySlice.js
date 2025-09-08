@@ -60,7 +60,7 @@ const surveySlice = createSlice({
       } else {
         options = {
           max: 1,
-          items: ["가", "나", "다"],
+          items: ["A", "B", "C"],
         };
       }
 

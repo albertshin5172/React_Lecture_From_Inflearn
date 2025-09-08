@@ -27,7 +27,7 @@ function FloatingButton() {
               })
         }
       >
-        저장
+        Save
       </Button>
     </FloatingButtonWrapper>
   );

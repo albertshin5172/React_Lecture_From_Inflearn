@@ -1,6 +1,6 @@
 # 🚀 React Practice - Practical Frontend Basics for Beginners
 
-> **🎓 Course**: *"실무 중심! FE 입문자를 위한 React 강의"* on Inflearn
+> **🎓 Course**: _"실무 중심! FE 입문자를 위한 React 강의"_ on Inflearn
 > **💻 Environment**: VSCode, Node.js, npm, Git
 > **📌 Goal**: Build a solid foundation in React for frontend development and gain hands-on experience with components, state, and props.
 
@@ -11,29 +11,33 @@
 ```
 react-practice/
 ├── memo-project/
+├── node_modules/
 ├── section_1-6/
 ├── survey-pie/
+├── survey-pie-admin/
+├── survey-pie-server/
+├── package-lock.json/
+├── package.json/
 └── README.md
 ```
 
 ---
 
-
 ---
 
 ## 📌 Chapters Covered
 
-| Chapter | Topic                                | Description                                  |
-|---------|--------------------------------------|----------------------------------------------|
-| 01      | Introduction to React                | SPA concept, virtual DOM, advantages         |
-| 02      | JSX                                  | JSX syntax, conditionals, loops, styling     |
-| 03      | Components                           | Props, state, function vs class components   |
-| 04      | Lifecycle & Hooks                    | useState, useEffect, rendering cycle         |
-| 05      | Event Handling                       | onClick, onChange, form handling             |
-| 06      | Environment Setup                    | Node.js, VSCode, CRA, ESLint, Prettier       |
-| 07      | Hands-on Projects                    | Accordion,                                   |
-| 08      | Hands-on Projects                    | Memo App                                     |
-| 09~     | Hands-on Projects                    | Survey Form(react-router, styled, recoil)    |
+| Chapter | Topic                 | Description                                |
+| ------- | --------------------- | ------------------------------------------ |
+| 01      | Introduction to React | SPA concept, virtual DOM, advantages       |
+| 02      | JSX                   | JSX syntax, conditionals, loops, styling   |
+| 03      | Components            | Props, state, function vs class components |
+| 04      | Lifecycle & Hooks     | useState, useEffect, rendering cycle       |
+| 05      | Event Handling        | onClick, onChange, form handling           |
+| 06      | Environment Setup     | Node.js, VSCode, CRA, ESLint, Prettier     |
+| 07      | Hands-on Projects     | Accordion,                                 |
+| 08      | Hands-on Projects     | Memo App                                   |
+| 09~     | Hands-on Projects     | Survey Form(react-router, styled, recoil)  |
 
 ---
 
@@ -76,6 +80,7 @@ npm start
 | ---------- | -------------------------------------------------- |
 | 2025-07-25 | Learned JSX basics and created the first component |
 | ...        | ...                                                |
+| 2025-09-07 | The end |
 
 ---
 
@@ -90,3 +95,4 @@ Repository: [(https://github.com/albertshin5172/React_Lecture_From_Inflearn)]
 This project is based on the course *"실무 중심! FE 입문자를 위한 React 강의"* provided on Inflearn.
 All course content and intellectual property belong to **Inflearn** and the **original instructor**.
 This repository is for **educational and non-commercial** use only.
+```
